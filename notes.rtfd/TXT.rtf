@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset128 HiraKakuProN-W3;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;\red247\green247\blue247;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25100\viewh13040\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 cucumber-chef 2.1.0.rc.15
+\f1 \
+\
++---------------------------------------------------------------+\
+|                      PROVIDER: Cucumber::Chef::Provider::AWS  |\
+|                            ID: i-fe5edaf7                     |\
+|                         STATE: running                        |\
+|                      USERNAME: root                           |\
+|                    IP ADDRESS: 54.213.90.186                  |\
+|                          PORT: 22                             |\
+|               CHEF-SERVER API: http://54.213.90.186:4000      |\
+|             CHEF-SERVER WEBUI: http://54.213.90.186:4040      |\
+|      CHEF-SERVER DEFAULT USER: admin                          |\
+|  CHEF-SERVER DEFAULT PASSWORD: p@ssw0rd1                      |\
++---------------------------------------------------------------+\
+\
+\
+Running cucumber, container not running because /var/lib/lxc permission denied. ssh to the VM and give permission to user.\
+\
+Dropped 2.1.0.rc.15, installed rvm&gems on mac, using cucumber-chef 3.0.8\
+Running cucumber, when creating container, got 
+\f2\fs22 \CocoaLigature0 E: Failed getting release file http://archive.ubuntu.com/ubuntu/dists/lucid/Release
+\f1\fs24 \CocoaLigature1 \
+Added \
+
+\f3\fs22 \cb2 # google nameservers\cb1 \
+\pard\pardeftab720
+\cf0 \cb2 nameserver 8.8.8.8\cb1 \
+\cb2 nameserver 8.8.4.4\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f1\fs24 \cf0 \cb1 \
+to 
+\f3\fs22 \cb2 /etc/resolv.conf
+\f1\fs24 \cb1  temporarily, waiting for result.\
+bind9 replaced /etc/resolv.conf {\field{\*\fldinst{HYPERLINK "https://bugs.launchpad.net/ubuntu/+source/bind9/+bug/933723"}}{\fldrslt https://bugs.launchpad.net/ubuntu/+source/bind9/+bug/933723}}\
+\
+Internet connection too slow, change chef install of VM to download local files: \
+1. in template file(/.rvm/gems/\'81\'63\'81\'63\'81\'63/template/ubuntu\'81\'63\'81\'63.erb, change downloading install.sh to copy\
+2. change metadata_url in install.sh\
+3. change function wget() to cp\
+4. change url in metadata.txt, put metadata&chef_ver___.deb in proper place\
+\
+chef version seems to upgrade, metadata.txt for chef_11.10.0\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f2\fs22 \cf0 \CocoaLigature0 url	/home/vagrant/install/chef_11.10.0-1.ubuntu.12.04_amd64.deb\
+md5	21524287ed5631eb1c092ba7b589e968\
+sha256	7a0a898b3682462620de80230c7a73730dde7131ca069e1d926f6faf07e4fa2f
+\f1\fs24 \CocoaLigature1 \
+}
